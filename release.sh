@@ -6,7 +6,7 @@ if [ x${INPUT_BINARY_NAME} != x ]; then
   BINARY_NAME=${INPUT_BINARY_NAME}
 fi
 if [ ! -z "${GITHUB_REF}" ]; then
-  RELEASE_TAG=$(basename ${GITHUB_REF})
+  RELEASE_TAG=$(basename {GITHUB_REF:10})
 else
   # workaround if `GITHUB_REF` is empty, see more in https://github.com/wangyoucao577/go-release-action/issues/108
   RELEASE_TAG=$(jq -r .release.tag_name ${GITHUB_EVENT_PATH})
