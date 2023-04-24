@@ -111,6 +111,8 @@ else
   fi
 fi
 
+# remove .git
+rm -rf .git
 
 # build
 BUILD_ARTIFACTS_FOLDER=build-artifacts-$(date +%s)
