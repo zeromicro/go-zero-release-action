@@ -5,12 +5,6 @@ ARG UPLOADER_VER
 ENV UPX_VER=${UPX_VER:-4.0.0}
 ENV UPLOADER_VER=${UPLOADER_VER:-v0.13.0}
 
-RUN echo 'deb http://mirrors.aliyun.com/debian/ buster main non-free contrib\n\
-deb http://mirrors.aliyun.com/debian-security buster/updates main\n\
-deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib\n\
-deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib\n'\
-> /etc/apt/sources.list
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
   curl \
   wget \
